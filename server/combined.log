@@ -1,0 +1,384 @@
+[2026-04-02 15:38:12] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 15:38:13] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 15:38:25] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 15:38:25] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 15:38:47] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 15:38:47] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 15:38:47] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 15:38:47] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 15:43:39] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 15:43:39] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 15:49:34] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 15:49:34] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 15:49:34] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 15:49:34] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 15:49:38] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 15:49:38] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 15:49:38] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 15:49:38] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:00:05] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:00:05] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:00:06] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:00:06] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:01:53] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:01:53] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:01:53] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:01:53] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:02:30] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:02:30] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:05:03] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:05:03] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:06:26] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:06:26] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:06:26] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:06:26] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:06:51] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:06:51] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:08:06] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:08:06] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:08:06] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:08:06] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:08:33] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:08:34] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:08:34] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:08:34] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:09:02] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Verify Email"
+[2026-04-02 16:09:04] [32minfo[39m: ✅ Email sent successfully: <6115dd3f-ca85-2f9b-3eea-94aa6854291e@myapp.com>
+[2026-04-02 16:24:52] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Verify Email"
+[2026-04-02 16:24:53] [32minfo[39m: ✅ Email sent successfully: <86faf96f-00b6-2bb1-cadb-4b1e5fba9a39@myapp.com>
+[2026-04-02 16:26:26] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:26:26] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:41:55] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Verify Email"
+[2026-04-02 16:41:58] [31merror[39m: ❌ Email sending failed: Invalid login: 535 Authentication failed
+Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:865:19)
+    at SMTPConnection._actionAUTHComplete (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:1673:34)
+    at SMTPConnection.<anonymous> (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:604:26)
+    at SMTPConnection._processResponse (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:1050:20)
+    at SMTPConnection._onData (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:825:14)
+    at TLSSocket.SMTPConnection._onSocketData (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:392:5)
+[2026-04-02 16:43:45] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Verify Email"
+[2026-04-02 16:43:47] [31merror[39m: ❌ Email sending failed: Invalid login: 535 Authentication failed
+Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:865:19)
+    at SMTPConnection._actionAUTHComplete (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:1673:34)
+    at SMTPConnection.<anonymous> (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:604:26)
+    at SMTPConnection._processResponse (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:1050:20)
+    at SMTPConnection._onData (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:825:14)
+    at TLSSocket.SMTPConnection._onSocketData (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:392:5)
+[2026-04-02 16:43:57] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:43:57] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:45:05] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Verify Email"
+[2026-04-02 16:45:07] [31merror[39m: ❌ Email sending failed: Invalid login: 535 Authentication failed
+Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:865:19)
+    at SMTPConnection._actionAUTHComplete (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:1673:34)
+    at SMTPConnection.<anonymous> (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:604:26)
+    at SMTPConnection._processResponse (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:1050:20)
+    at SMTPConnection._onData (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:825:14)
+    at TLSSocket.SMTPConnection._onSocketData (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:392:5)
+[2026-04-02 16:47:33] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 16:47:33] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 16:47:36] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Verify Email"
+[2026-04-02 16:47:39] [31merror[39m: ❌ Email sending failed: Invalid login: 535 Authentication failed
+Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:865:19)
+    at SMTPConnection._actionAUTHComplete (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:1673:34)
+    at SMTPConnection.<anonymous> (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:604:26)
+    at SMTPConnection._processResponse (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:1050:20)
+    at SMTPConnection._onData (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:825:14)
+    at TLSSocket.SMTPConnection._onSocketData (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:392:5)
+[2026-04-02 17:07:26] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Verify Email"
+[2026-04-02 17:07:30] [31merror[39m: ❌ Email sending failed: Invalid login: 535 Authentication failed
+Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:865:19)
+    at SMTPConnection._actionAUTHComplete (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:1673:34)
+    at SMTPConnection.<anonymous> (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:604:26)
+    at SMTPConnection._processResponse (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:1050:20)
+    at SMTPConnection._onData (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:825:14)
+    at TLSSocket.SMTPConnection._onSocketData (E:\green-peddle\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:392:5)
+[2026-04-02 17:10:05] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:10:06] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 17:10:36] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Verify Email"
+[2026-04-02 17:10:37] [32minfo[39m: ✅ Email sent successfully: <115b65fc-08e3-beb4-a75c-73292a8fa093@myapp.com>
+[2026-04-02 17:13:09] [32minfo[39m: 📧 Attempting to send email to newwongamer@gmail.com with subject: "Verify Email"
+[2026-04-02 17:13:10] [32minfo[39m: ✅ Email sent successfully: <8c02c292-c722-26a1-a7ce-d8fc1bf42e0c@myapp.com>
+[2026-04-02 17:20:27] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:20:27] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 17:21:51] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Verify Email"
+[2026-04-02 17:21:52] [32minfo[39m: ✅ Email sent successfully: <fba80bb7-cac6-2c0b-4922-26e05ab16a33@myapp.com>
+[2026-04-02 17:22:16] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:22:16] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 17:22:28] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Verify Email"
+[2026-04-02 17:22:29] [32minfo[39m: ✅ Email sent successfully: <755674ba-e64c-529e-246e-b19da8f611f8@myapp.com>
+[2026-04-02 17:42:34] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:42:34] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:42:34] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 17:42:34] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 17:43:24] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:43:24] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 17:43:24] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:43:24] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 17:43:42] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:43:42] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 17:43:42] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:43:42] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 17:44:00] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:44:01] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-02 17:44:00] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-02 17:44:01] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 08:57:54] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 08:57:54] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 08:57:57] [32minfo[39m: ✅ Email sent successfully: <f24500bd-0c72-b8e0-1c22-75f79e84a0c8@smtp-brevo.com>
+[2026-04-03 09:08:08] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:08:08] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:08:09] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:08:09] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:08:53] [32minfo[39m: 📧 Attempting to send email to test@example.com with subject: "Verify Email"
+[2026-04-03 09:08:53] [31merror[39m: ❌ Email sending failed: Email configuration missing: EMAIL_FROM
+Error: Email configuration missing: EMAIL_FROM
+    at getEmailTransporter (E:\green-peddle\server\src\utils\email.ts:17:11)
+    at sendEmail (E:\green-peddle\server\src\utils\email.ts:43:25)
+    at Object.register (E:\green-peddle\server\src\modules\auth\auth.service.ts:53:18)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at register (E:\green-peddle\server\src\modules\auth\auth.controller.ts:16:18)
+[2026-04-03 09:09:10] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:09:10] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:09:18] [32minfo[39m: 📧 Attempting to send email to test@example.com with subject: "Verify Email"
+[2026-04-03 09:09:18] [31merror[39m: ❌ Email sending failed: Email configuration missing: EMAIL_FROM
+Error: Email configuration missing: EMAIL_FROM
+    at getEmailTransporter (E:\green-peddle\server\src\utils\email.ts:17:11)
+    at sendEmail (E:\green-peddle\server\src\utils\email.ts:43:25)
+    at Object.register (E:\green-peddle\server\src\modules\auth\auth.service.ts:53:18)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at register (E:\green-peddle\server\src\modules\auth\auth.controller.ts:16:18)
+[2026-04-03 09:10:39] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:10:39] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:10:45] [32minfo[39m: 📧 Attempting to send email to test@example.com with subject: "Verify Email"
+[2026-04-03 09:10:50] [32minfo[39m: ✅ Email sent successfully: <5b5712cc-6e14-3cea-163a-704187d2458d@localhost>
+[2026-04-03 09:12:27] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:12:27] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:12:31] [32minfo[39m: 📧 Attempting to send email to test@example.com with subject: "Verify Email"
+[2026-04-03 09:12:36] [32minfo[39m: ✅ Email sent successfully: <e6cfb3dc-1a50-d08a-3f5b-2c254ff11742@localhost>
+[2026-04-03 09:14:23] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:14:23] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:14:34] [32minfo[39m: 📧 Attempting to send email to test@example.com with subject: "Verify Email"
+[2026-04-03 09:14:38] [32minfo[39m: ✅ Email sent successfully: <974db64e-02a3-be86-adfa-e232e144e05f@localhost>
+[2026-04-03 09:15:36] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:15:36] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:15:39] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:15:39] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:15:44] [32minfo[39m: 📧 Attempting to send email to test@example.com with subject: "Verify Email"
+[2026-04-03 09:15:48] [32minfo[39m: ✅ Email sent successfully: <261a7dfb-c0f8-055e-f22b-8156c154872e@localhost>
+[2026-04-03 09:27:12] [32minfo[39m: 📧 Attempting to send email to test@example.com with subject: "Verify Email"
+[2026-04-03 09:27:16] [32minfo[39m: ✅ Email sent successfully: <b7e45830-e40f-53cb-c600-e622277e90e0@localhost>
+[2026-04-03 09:35:24] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:35:24] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:44:52] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:44:52] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:45:17] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:45:17] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:46:25] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:46:25] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:47:11] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:47:11] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:48:09] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:48:09] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 09:48:14] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 09:48:14] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:44:27] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:44:27] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:44:45] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:44:45] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:44:53] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:44:53] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:46:00] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:46:00] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:46:03] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:46:03] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:46:48] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:46:48] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:46:49] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:46:49] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:47:31] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:47:31] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:47:44] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:47:44] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:47:47] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:47:47] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:55:11] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:55:11] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 14:56:28] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 14:56:28] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:20:28] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:20:28] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:25:35] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:25:35] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:26:50] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:26:50] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:28:04] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:28:04] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:29:55] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:29:55] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:30:37] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:30:38] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:31:06] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:31:06] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:31:41] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:31:41] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:32:27] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:32:27] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:32:35] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:32:35] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-03 15:32:46] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-03 15:32:46] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-05 16:14:35] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-05 16:14:36] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-05 23:50:17] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Reset Password"
+[2026-04-05 23:50:17] [31merror[39m: ❌ Email sending failed: Email configuration missing: EMAIL_FROM
+Error: Email configuration missing: EMAIL_FROM
+    at getEmailTransporter (E:\green-peddle\server\src\utils\email.ts:18:11)
+    at sendEmail (E:\green-peddle\server\src\utils\email.ts:44:25)
+    at Object.forgotPassword (E:\green-peddle\server\src\modules\auth\auth.service.ts:189:18)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at forgotPassword (E:\green-peddle\server\src\modules\auth\auth.controller.ts:54:18)
+[2026-04-05 23:50:58] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Reset Password"
+[2026-04-05 23:50:58] [31merror[39m: ❌ Email sending failed: Email configuration missing: EMAIL_FROM
+Error: Email configuration missing: EMAIL_FROM
+    at getEmailTransporter (E:\green-peddle\server\src\utils\email.ts:18:11)
+    at sendEmail (E:\green-peddle\server\src\utils\email.ts:44:25)
+    at Object.forgotPassword (E:\green-peddle\server\src\modules\auth\auth.service.ts:189:18)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at forgotPassword (E:\green-peddle\server\src\modules\auth\auth.controller.ts:54:18)
+[2026-04-05 23:54:50] [32minfo[39m: 📧 Attempting to send email to om@gmail.com with subject: "Verify Email"
+[2026-04-05 23:54:50] [31merror[39m: ❌ Email sending failed: Email configuration missing: EMAIL_FROM
+Error: Email configuration missing: EMAIL_FROM
+    at getEmailTransporter (E:\green-peddle\server\src\utils\email.ts:18:11)
+    at sendEmail (E:\green-peddle\server\src\utils\email.ts:44:25)
+    at Object.register (E:\green-peddle\server\src\modules\auth\auth.service.ts:53:18)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at register (E:\green-peddle\server\src\modules\auth\auth.controller.ts:16:18)
+[2026-04-06 00:01:30] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:01:31] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:02:02] [32minfo[39m: 📧 Attempting to send email to sham@gmail.com with subject: "Verify Email"
+[2026-04-06 00:02:06] [32minfo[39m: ✅ Email sent successfully: <655292a2-16e5-346c-872b-c89e51b8ab6d@myapp.com>
+[2026-04-06 00:03:01] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:03:01] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:03:58] [32minfo[39m: 📧 Attempting to send email to swati@gmail.com with subject: "Verify Email"
+[2026-04-06 00:04:02] [32minfo[39m: ✅ Email sent successfully: <951788cc-4f2e-060a-d80e-5cd1db0e7acf@myapp.com>
+[2026-04-06 00:06:55] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Reset Password"
+[2026-04-06 00:06:59] [32minfo[39m: ✅ Email sent successfully: <adad1771-3a05-ae5b-5b5d-71bf65c420c5@myapp.com>
+[2026-04-06 00:07:25] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:07:25] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:07:31] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Reset Password"
+[2026-04-06 00:07:36] [32minfo[39m: ✅ Email sent successfully: <ec3eee55-00ac-9fd4-b3de-dec093a321c6@myapp.com>
+[2026-04-06 00:07:46] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:07:46] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:07:51] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Reset Password"
+[2026-04-06 00:07:55] [32minfo[39m: ✅ Email sent successfully: <1b7bf611-f000-d454-92be-91bb67441d14@myapp.com>
+[2026-04-06 00:10:23] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:10:23] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:10:28] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:10:28] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:10:34] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:10:34] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:12:24] [32minfo[39m: 📧 Attempting to send email to swa@gmail.com with subject: "Verify Email"
+[2026-04-06 00:12:28] [32minfo[39m: ✅ Email sent successfully: <0438685d-cc2d-8f98-0fff-ec2958ac3a1e@myapp.com>
+[2026-04-06 00:18:45] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:18:45] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:21:01] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:21:01] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:21:21] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:21:21] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:22:54] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:22:54] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:28:23] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Reset Password"
+[2026-04-06 00:28:27] [32minfo[39m: ✅ Email sent successfully: <598a7652-7e8d-e9ed-381b-8a3c84457740@myapp.com>
+[2026-04-06 00:29:43] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:29:43] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:29:58] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:29:58] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:30:19] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Reset Password"
+[2026-04-06 00:30:23] [32minfo[39m: ✅ Email sent successfully: <e9d93ab4-7de5-879e-d0e4-78feec9041c5@myapp.com>
+[2026-04-06 00:33:54] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 00:33:54] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 00:34:32] [32minfo[39m: 📧 Attempting to send email to kirankatti550@gmail.com with subject: "Reset Password"
+[2026-04-06 00:34:37] [32minfo[39m: ✅ Email sent successfully: <b51c1102-5491-108b-9ba6-e2518219dbf4@myapp.com>
+[2026-04-06 10:53:54] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 10:53:54] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 11:50:41] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 11:50:41] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 11:51:01] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 11:51:01] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 11:51:07] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 11:51:07] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 11:51:12] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 11:51:12] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 11:51:19] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 11:51:19] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 11:51:26] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 11:51:26] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 11:51:46] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 11:51:46] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 11:55:58] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 11:55:58] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 11:56:17] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 11:56:17] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 11:56:19] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 11:56:19] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 12:24:45] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 12:24:46] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 13:02:30] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 13:02:30] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 13:02:34] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 13:02:34] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 13:03:38] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 13:03:38] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 17:59:23] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 17:59:23] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 17:59:48] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 17:59:48] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:00:09] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:00:09] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:00:17] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:00:17] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:00:24] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:00:24] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:00:30] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:00:30] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:00:36] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:00:36] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:02:57] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:02:58] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:03:05] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:03:05] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:25:44] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:25:44] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:25:53] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:25:53] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:26:08] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:26:08] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:26:17] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:26:17] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-06 18:26:25] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-06 18:26:25] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter

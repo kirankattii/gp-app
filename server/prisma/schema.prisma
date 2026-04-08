@@ -1,0 +1,101 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+
+
+
+model User {
+  id                  String        @id @default(uuid())
+  name                String?
+  email               String        @unique
+  passwordHash        String?
+  role                Role          @default(BUYER)
+  googleId            String?       @unique
+  isEmailVerified     Boolean       @default(false)
+
+  tokenVersion        Int           @default(0)
+
+  twoFactorEnabled    Boolean       @default(false)
+  twoFactorSecret     String?
+
+  resetPasswordToken   String?
+  resetPasswordExpires DateTime?
+
+  verificationToken     String?
+  verificationExpires   DateTime?
+
+  sellerProfile        SellerProfile?
+
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+}
+
+model SellerProfile {
+  id                 String           @id @default(uuid())
+  userId             String           @unique
+  user               User             @relation(fields: [userId], references: [id])
+
+  legalDocuments     LegalDocument[]
+
+  storeName          String?
+  businessType       String?
+  mobileNumber       String?
+  fullAddress        String?
+  pincode            Int?
+  town               String?
+  district           String?
+  state              String?
+  country            String?    @default("India")
+  
+  latitude           Float?
+  longitude          Float?
+
+  gstin              String?    @unique
+  pan                String?    @unique // Optional in DB to allow initial creation, but mandatory in Zod validation
+
+  bankAccountNumber  String?
+  ifscCode           String?
+
+  approvalStatus      SellerStatus @default(PENDING)
+  rejectionReason     String?
+  profileCompletion   Int          @default(0)
+
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+}
+
+model LegalDocument {
+  id             String         @id @default(uuid())
+  sellerProfileId String
+  sellerProfile   SellerProfile @relation(fields: [sellerProfileId], references: [id], onDelete: Cascade)
+
+  fileUrl        String
+  fileType       String
+  uploadedAt     DateTime       @default(now())
+}
+enum SellerStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum Role {
+  BUYER
+  SELLER
+  ADMIN
+  SUPERADMIN
+}
+
+

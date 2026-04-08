@@ -1,0 +1,21 @@
+[2026-04-05 23:50:17] [31merror[39m: ❌ Email sending failed: Email configuration missing: EMAIL_FROM
+Error: Email configuration missing: EMAIL_FROM
+    at getEmailTransporter (E:\green-peddle\server\src\utils\email.ts:18:11)
+    at sendEmail (E:\green-peddle\server\src\utils\email.ts:44:25)
+    at Object.forgotPassword (E:\green-peddle\server\src\modules\auth\auth.service.ts:189:18)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at forgotPassword (E:\green-peddle\server\src\modules\auth\auth.controller.ts:54:18)
+[2026-04-05 23:50:58] [31merror[39m: ❌ Email sending failed: Email configuration missing: EMAIL_FROM
+Error: Email configuration missing: EMAIL_FROM
+    at getEmailTransporter (E:\green-peddle\server\src\utils\email.ts:18:11)
+    at sendEmail (E:\green-peddle\server\src\utils\email.ts:44:25)
+    at Object.forgotPassword (E:\green-peddle\server\src\modules\auth\auth.service.ts:189:18)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at forgotPassword (E:\green-peddle\server\src\modules\auth\auth.controller.ts:54:18)
+[2026-04-05 23:54:50] [31merror[39m: ❌ Email sending failed: Email configuration missing: EMAIL_FROM
+Error: Email configuration missing: EMAIL_FROM
+    at getEmailTransporter (E:\green-peddle\server\src\utils\email.ts:18:11)
+    at sendEmail (E:\green-peddle\server\src\utils\email.ts:44:25)
+    at Object.register (E:\green-peddle\server\src\modules\auth\auth.service.ts:53:18)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at register (E:\green-peddle\server\src\modules\auth\auth.controller.ts:16:18)

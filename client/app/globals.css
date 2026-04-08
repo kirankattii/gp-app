@@ -1,0 +1,122 @@
+/* ======================================================
+   Imports
+====================================================== */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* No dark variant because GP has no dark mode */
+@custom-variant light (&:is(.light *));
+
+/* ======================================================
+   Tailwind Theme Tokens (Linked to GP brand vars)
+====================================================== */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: #295D30;
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* 🟩 GP Brand Tokens */
+  --color-gp-green: #295D30;
+  --color-gp-green-hover: #1f4826;
+  --color-gp-green-light: #34743c;
+  --color-gp-beige: #F5F0E8;
+  --color-gp-brown: #814D0D;
+  --color-gp-cream: #F5ECE2;
+  --color-gp-black: #1C1C1C;
+
+  /* 🎨 Semantic Brand Tokens */
+  --color-gp-success: var(--gp-success);
+  --color-gp-success-soft: var(--gp-success-soft);
+  --color-gp-error: var(--gp-error);
+  --color-gp-error-soft: var(--gp-error-soft);
+  --color-gp-warning: var(--gp-warning);
+  --color-gp-warning-soft: var(--gp-warning-soft);
+
+  /* Radii */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+/* ======================================================
+   GP BRAND LIGHT MODE (ONLY)
+====================================================== */
+:root {
+  --radius: 0.625rem;
+
+  /* 🟩 GP Brand Colors */
+  --gp-beige: #F5F0E8;
+  --gp-brown: #814D0D;
+  --gp-green: #295D30;
+  --gp-light-green: #E8F0E9;
+  --gp-cream: #F5ECE2;
+  --gp-black: #1C1C1C;
+  --gp-border: color-mix(in oklch, var(--gp-black) 20%, transparent);
+  --gp-text: var(--gp-black);
+
+  /* Shadcn Design Tokens mapped to GP colors */
+  --background: var(--gp-beige);
+  --foreground: var(--gp-black);
+
+  --primary: var(--gp-green);
+  --primary-foreground: white;
+
+  --gp-green-hover: #1f4826;
+  --gp-green-light: #34743c;
+
+  /* 🎨 Semantic Brand Colors */
+  --gp-success: #10B981;
+  --gp-success-soft: #ECFDF5;
+  --gp-error: #EF4444;
+  --gp-error-soft: #FEF2F2;
+  --gp-warning: #F59E0B;
+  --gp-warning-soft: #FFFBEB;
+
+  --secondary: #814D0D;
+  --secondary-foreground: white;
+
+  --card: #F5ECE2;
+  --card-foreground: #1C1C1C;
+
+  --muted: var(--gp-light-green);
+  --muted-foreground: #4d4d4d;
+
+  /* Support tokens */
+  --border: color-mix(in oklch, var(--gp-black) 8%, transparent);
+  --input: color-mix(in oklch, var(--gp-black) 12%, transparent);
+  --ring: color-mix(in oklch, var(--gp-green) 45%, transparent);
+}
+
+/* ======================================================
+   Base Layer
+====================================================== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}

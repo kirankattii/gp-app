@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./server
+    container_name: green_peddle_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./server/.env
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - gnetwork
+
+  postgres:
+    image: postgres:16
+    container_name: green_peddle_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Database password required}
+      POSTGRES_DB: ${POSTGRES_DB:-greenpeddle}    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - gnetwork
+
+  redis:
+    image: redis:7
+    container_name: green_peddle_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - gnetwork
+
+volumes:
+  pgdata:
+
+networks:
+  gnetwork:
