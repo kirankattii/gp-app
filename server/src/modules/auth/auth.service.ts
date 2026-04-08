@@ -1,3 +1,4 @@
+import { Request, Response } from "express";
 import { prisma } from "@/config/prisma";
 import { hashPassword, checkPassword } from "@/utils/hash";
 import {
@@ -19,7 +20,13 @@ const getGoogleClient = () =>
     process.env.GOOGLE_REDIRECT_URI!
   );
 
-export const register = async (data: any) => {
+export interface AuthResponse {
+  status: number;
+  data?: any;
+  redirect?: string;
+}
+
+export const register = async (data: any): Promise<AuthResponse> => {
   const { name, email, password } = data;
 
   const existing = await prisma.user.findUnique({
@@ -56,7 +63,7 @@ export const register = async (data: any) => {
   };
 };
 
-export const registerSeller = async (data: any) => {
+export const registerSeller = async (data: any): Promise<AuthResponse> => {
   const { name, email, password } = data;
 
   const existing = await prisma.user.findUnique({
@@ -105,7 +112,7 @@ export const registerSeller = async (data: any) => {
   };
 };
 
-export const verifyEmail = async (token: string, res: any) => {
+export const verifyEmail = async (token: string, res: Response): Promise<AuthResponse> => {
   try {
     const tokenHash = crypto.createHash("sha256").update(token).digest("hex");
 
@@ -168,7 +175,37 @@ export const verifyEmail = async (token: string, res: any) => {
   }
 };
 
-export const login = async (data: any, res: any) => {
+export const adminLogin = async (data: any, res: Response): Promise<AuthResponse> => {
+  const result = await login(data, res);
+
+  if (result.status === 200 && result.data?.user) {
+    const userRole = result.data.user.role;
+    if (userRole !== "ADMIN" && userRole !== "SUPERADMIN") {
+      // Clear the refresh token cookie set by login()
+      res.clearCookie("refreshToken");
+      return {
+        status: 403,
+        data: { message: "Access denied. Admin or Super Admin role required." },
+      };
+    }
+
+    // Wrap the result in the format expected by the admin frontend
+    return {
+      status: 200,
+      data: {
+        message: "Login successful",
+        data: {
+          token: result.data.accessToken,
+          _id: result.data.user.id,
+          ...result.data.user,
+        },
+      },
+    };
+  }
+  return result;
+};
+
+export const login = async (data: any, res: Response): Promise<AuthResponse> => {
   const { email, password } = data;
 
   const user = await prisma.user.findUnique({ where: { email } });
@@ -220,7 +257,7 @@ export const login = async (data: any, res: any) => {
   };
 };
 
-export const refresh = async (req: any, res: any) => {
+export const refresh = async (req: Request, res: Response): Promise<AuthResponse> => {
   const token = req.cookies.refreshToken;
   if (!token)
     return { status: 401, data: { message: "Token missing" } };
@@ -268,12 +305,12 @@ export const refresh = async (req: any, res: any) => {
   };
 };
 
-export const logout = async (res: any) => {
+export const logout = async (res: Response): Promise<AuthResponse> => {
   res.clearCookie("refreshToken");
   return { status: 200, data: { message: "Logged out successfully" } };
 };
 
-export const forgotPassword = async (email: string) => {
+export const forgotPassword = async (email: string): Promise<AuthResponse> => {
   const user = await prisma.user.findUnique({ where: { email } });
 
   if (!user)
@@ -297,7 +334,7 @@ export const forgotPassword = async (email: string) => {
   return { status: 200, data: { message: "Reset link sent" } };
 };
 
-export const resetPassword = async (data: any) => {
+export const resetPassword = async (data: any): Promise<AuthResponse> => {
   const { token, password } = data;
 
   const tokenHash = crypto.createHash("sha256").update(token).digest("hex");
@@ -327,7 +364,7 @@ export const resetPassword = async (data: any) => {
   return { status: 200, data: { message: "Password reset successful" } };
 };
 
-export const googleStart = async (res: any) => {
+export const googleStart = async (res: Response): Promise<void> => {
   const client = getGoogleClient();
 
   const url = client.generateAuthUrl({
@@ -345,8 +382,8 @@ export const googleStart = async (res: any) => {
   res.redirect(url);
 };
 
-export const googleCallback = async (req: any, res: any) => {
-  const code = req.query.code;
+export const googleCallback = async (req: Request, res: Response): Promise<AuthResponse> => {
+  const code = req.query.code as string;
   const client = getGoogleClient();
 
   try {
@@ -391,16 +428,53 @@ export const googleCallback = async (req: any, res: any) => {
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       sameSite: REFRESH_COOKIE_SAME_SITE,
-      secure: true,
+      secure: process.env.NODE_ENV === "production",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
-
     return {
       status: 302,
+      data: null,
       redirect: `${process.env.FRONTEND_URL || "http://localhost:3000"}/auth-callback?success=true`,
     };
   } catch (error) {
     console.error("Google OAuth error:", error);
     return { status: 500, data: { message: "Google authentication failed" } };
+  }
+};
+
+export const getMe = async (userId: string): Promise<AuthResponse> => {
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: userId },
+      select: {
+        id: true,
+        email: true,
+        name: true,
+        role: true,
+        isEmailVerified: true,
+        createdAt: true,
+        updatedAt: true,
+        sellerProfile: {
+          select: {
+            id: true,
+            storeName: true,
+            approvalStatus: true,
+            profileCompletion: true,
+          },
+        },
+      },
+    });
+
+    if (!user) {
+      return { status: 404, data: { message: "User not found" } };
+    }
+
+    return {
+      status: 200,
+      data: { user },
+    };
+  } catch (error) {
+    console.error("GetMe error:", error instanceof Error ? error.message : "Unknown error");
+    return { status: 500, data: { message: "Internal server error" } };
   }
 };

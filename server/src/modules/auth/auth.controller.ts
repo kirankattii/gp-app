@@ -1,6 +1,7 @@
 
 import { Request, Response } from "express";
 import * as AuthService from "./auth.service";
+import { AuthRequest } from "../../middlewares/auth.middleware";
 import {
   registerSchema,
   loginSchema,
@@ -33,6 +34,15 @@ export const login = async (req: Request, res: Response) => {
     return res.status(400).json({ errors: parsed.error.flatten() });
 
   const result = await AuthService.login(parsed.data, res);
+  return res.status(result.status).json(result.data);
+};
+
+export const adminLogin = async (req: Request, res: Response) => {
+  const parsed = loginSchema.safeParse(req.body);
+  if (!parsed.success)
+    return res.status(400).json({ errors: parsed.error.flatten() });
+
+  const result = await AuthService.adminLogin(parsed.data, res);
   return res.status(result.status).json(result.data);
 };
 
@@ -85,3 +95,12 @@ export const googleCallback = async (req: Request, res: Response) => {
   }
   return res.status(result.status).json(result.data);
 };
+
+export const getMe = async (req: AuthRequest, res: Response) => {
+  if (!req.user) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+
+  const result = await AuthService.getMe(req.user.id);
+  return res.status(result.status).json(result.data);
+};
