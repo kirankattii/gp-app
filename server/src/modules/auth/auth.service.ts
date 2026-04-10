@@ -102,7 +102,7 @@ export const registerSeller = async (data: any): Promise<AuthResponse> => {
 
     return { user };
   });
-  const verifyUrl = `${process.env.FRONTEND_URL || "http://localhost:3000"}/verify-email?token=${rawToken}`;
+  const verifyUrl = `${process.env.FRONTEND_URL || "http://localhost:3000"}/verify-email?token=${rawToken}&redirectTo=/seller/onboarding`;
 
   await sendEmail(user.email, "Verify Seller Account", `<a href="${verifyUrl}">Verify Seller Account</a>`);
 

@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/select";
 import InpLabel from "./AppLabel";
 import AppSpinner from "../Spinner/AppSpinner";
-import clsx from "clsx";
 
 interface AppSelectProps {
   label?: string;
@@ -32,7 +31,7 @@ export const AppSelect = ({
   options,
   error,
   className,
-  size = "sm",
+  size,
   placeholder,
   onChange,
   isRequired,
@@ -41,6 +40,9 @@ export const AppSelect = ({
   value,
   loading,
 }: AppSelectProps) => {
+  const handleChange = (val: string) => {
+    onChange?.(val);
+  };
 
   if (loading) {
     return (
@@ -64,32 +66,26 @@ export const AppSelect = ({
           {label}
         </InpLabel>
       )}
-
-      <Select onValueChange={onChange} disabled={disabled} value={value}>
+      <Select onValueChange={handleChange} disabled={disabled} value={value}>
         <SelectTrigger
-          className={clsx(
-            "w-full border-border focus:ring-gp-green/20 focus:border-gp-green transition-all duration-300",
-            error && "border-red-500 focus:border-red-500 focus:ring-red-500/10",
-            size === "sm" && "h-10 text-sm",
-            size === "lg" && "h-12 text-base",
-            inputClassName
-          )}
+          className={inputClassName}
+          size={size === "sm" ? "sm" : "default"}
         >
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
-
         <SelectContent>
-          {options.map((opt, idx) => (
-            <SelectItem key={idx} value={opt.value.toString()}>
-              {opt.label}
+          {options.map((option, index) => (
+            <SelectItem key={index} value={option.value?.toString()}>
+              {option.label}
             </SelectItem>
           ))}
         </SelectContent>
       </Select>
-
-      {error && <p className="text-red-500 text-xs mt-1 font-medium">{error}</p>}
+      {error && (
+        <div className="text-red-500 text-sm mt-1 font-medium">{error}</div>
+      )}
     </div>
   );
 };
 
-export default AppSelect;
+export default AppSelect;

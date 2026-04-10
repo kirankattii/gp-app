@@ -21,9 +21,9 @@ interface AppInputProps {
   isRequired?: boolean;
   maxLength?: number;
   readOnly?: boolean;
-  autoFocus?: boolean;
   inputClassName?: string;
   labelClassName?: string;
+  autoFocus?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   note?: React.ReactNode;
@@ -38,7 +38,7 @@ export const AppInput = ({
   rules,
   error,
   className,
-  size = "sm",
+  size,
   onChange,
   onBlur,
   onFocus,
@@ -47,9 +47,9 @@ export const AppInput = ({
   isRequired,
   maxLength,
   readOnly = false,
-  autoFocus = false,
   inputClassName,
   labelClassName,
+  autoFocus = false,
   leftIcon,
   rightIcon,
   note,
@@ -77,12 +77,14 @@ export const AppInput = ({
       const value = event.target.value;
       if (value.length > maxLength) {
         event.target.value = value.slice(0, maxLength);
+        return;
       }
     }
 
     registerOnChange(event);
     onChange?.(event);
   };
+
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     registerOnBlur(event);
     onBlur?.(event);
@@ -107,42 +109,41 @@ export const AppInput = ({
 
       <div className="relative">
         {leftIcon && (
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gp-dark/70 pointer-events-none z-10">
+          <div className="absolute left-3 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
             {leftIcon}
-          </span>
+          </div>
         )}
-
         <Input
           type={type}
           placeholder={placeholder}
-          disabled={disabled}
-          autoFocus={autoFocus}
-          readOnly={readOnly}
-          maxLength={maxLength}
-          autoComplete="off"
-          {...registerRest}
           onChange={handleChange}
           onBlur={handleBlur}
           onFocus={handleFocus}
           onClick={onClick}
+          readOnly={readOnly}
+          disabled={disabled}
+          autoComplete="off"
+          maxLength={maxLength}
+          autoFocus={autoFocus}
+          {...registerRest}
           className={clsx(
-            "w-full border rounded-md border-border px-3 focus:outline-none focus:ring-2 focus:ring-gp-green/20 focus:border-gp-green transition-all duration-300",
+            size === "sm" && "h-9 text-sm",
             leftIcon && "pl-10",
             rightIcon && "pr-10",
-            size === "sm" && "h-10 text-sm",
-            size === "lg" && "h-12 text-base",
-            inputClassName
+            inputClassName,
+            size === "sm" && "h-8",
+            size === "lg" && "h-10"
           )}
         />
-
         {rightIcon && (
-          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gp-dark/70 z-10">
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10">
             {rightIcon}
-          </span>
+          </div>
         )}
       </div>
-
-      {error && <p className="text-red-500 text-xs mt-1 font-medium">{error}</p>}
+      {error && (
+        <div className="text-red-500 text-xs mt-1 font-medium">{error}</div>
+      )}
     </div>
   );
 };

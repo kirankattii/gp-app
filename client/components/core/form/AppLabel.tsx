@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import { Info } from "lucide-react";
 import AppPopover from "../popover/AppPopover";
+import { Info } from "lucide-react";
 
 interface InpLabelProps {
   children: React.ReactNode;
@@ -23,26 +23,24 @@ const InpLabel = ({
     <label
       htmlFor={htmlFor}
       className={clsx(
-        "flex items-center gap-1 mb-1 font-medium text-[var(--gp-black)]",
+        "mb-2 font-medium text-gray-800 flex items-center gap-1",
         size === "sm" ? "text-xs" : "text-sm",
         labelClassName
       )}
     >
       {children}
-
-      {isRequired && <span className="text-red-500">*</span>}
-
-      {note && (
+      {isRequired && <span className="text-xs text-red-500">*</span>}
+      {note ? (
         <AppPopover
           triggerContent={
-            <button className="cursor-pointer text-gray-500">
+            <button className="cursor-pointer text-gray-500 w-auto">
               <Info size={12} />
             </button>
           }
         >
           {note}
         </AppPopover>
-      )}
+      ) : null}
     </label>
   );
 };
