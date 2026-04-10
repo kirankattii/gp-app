@@ -193,52 +193,51 @@ export const getAllSellers = async (params: any = {}) => {
       { user: { email: { contains: search, mode: "insensitive" } } },
     ];
   }
-  if (outputType === "count") {
-    // Build base filter without approvalStatus for status-specific counts
-    const { approvalStatus, ...baseWhere } = where;
-    const [pending, approved, rejected] = await Promise.all([
-      prisma.sellerProfile.count({ where: { ...baseWhere, approvalStatus: "PENDING" } }),
-      prisma.sellerProfile.count({ where: { ...baseWhere, approvalStatus: "APPROVED" } }),
-      prisma.sellerProfile.count({ where: { ...baseWhere, approvalStatus: "REJECTED" } }),
-    ]);
+  try {
+    if (outputType === "count") {
+      // Build base filter without approvalStatus for status-specific counts
+      const { approvalStatus, ...baseWhere } = where;
+      const [pending, approved, rejected] = await Promise.all([
+        prisma.sellerProfile.count({ where: { ...baseWhere, approvalStatus: "PENDING" } }),
+        prisma.sellerProfile.count({ where: { ...baseWhere, approvalStatus: "APPROVED" } }),
+        prisma.sellerProfile.count({ where: { ...baseWhere, approvalStatus: "REJECTED" } }),
+      ]);
 
-    return {
-      status: 200,
-      data: {
-        pending,
-        approved,
-        rejected,
-        total: pending + approved + rejected,
-      },
-    };
-  }
-};
+      return {
+        status: 200,
+        data: {
+          pending,
+          approved,
+          rejected,
+          total: pending + approved + rejected,
+        },
+      };
     }
 
-const skip = (Number(page) - 1) * Number(limit);
-const take = Number(limit);
+    const skip = (Number(page) - 1) * Number(limit);
+    const take = Number(limit);
 
-const [sellers, totalRecords] = await Promise.all([
-  prisma.sellerProfile.findMany({
-    where,
-    include: {
-      user: {
-        select: {
-          name: true,
-          email: true,
+    const [sellers, totalRecords] = await Promise.all([
+      prisma.sellerProfile.findMany({
+        where,
+        include: {
+          user: {
+            select: {
+              name: true,
+              email: true,
+            },
+          },
         },
-      },
-    },
-    orderBy: { [sortBy]: sortOrder },
-    skip: isNaN(skip) ? 0 : skip,
-    take: isNaN(take) ? 20 : take,
-  }),
-  prisma.sellerProfile.count({ where }),
-]);
+        orderBy: { [sortBy]: sortOrder },
+        skip: isNaN(skip) ? 0 : skip,
+        take: isNaN(take) ? 20 : take,
+      }),
+      prisma.sellerProfile.count({ where }),
+    ]);
 
-return { status: 200, data: { sellers, totalRecords } };
+    return { status: 200, data: { sellers, totalRecords } };
   } catch (error: any) {
-  console.error("Error in getAllSellers:", error);
-  return { status: 500, data: { message: "Internal server error", error: error.message } };
-}
+    console.error("Error in getAllSellers:", error);
+    return { status: 500, data: { message: "Internal server error", error: error.message } };
+  }
 };
