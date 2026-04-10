@@ -3,12 +3,31 @@
 import Image from "next/image";
 import AppLink from "@/components/core/link/AppLink";
 import { motion } from "framer-motion";
-import { Leaf, Zap, Shield, Globe, ArrowRight, Menu, X } from "lucide-react";
-import { useState } from "react";
+import {
+  Leaf,
+  Zap,
+  Shield,
+  Globe,
+  ArrowRight,
+  Menu,
+  X
+} from "lucide-react";
+import { useState, useEffect } from "react";
 import AppButton from "@/components/core/button/AppButton";
+import { useAuthStore } from "@/store/authStore";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const { isAuthenticated, _hasHydrated } = useAuthStore();
+  const { logout } = useAuth();
+
+  useEffect(() => {
+    if (_hasHydrated) {
+      setIsMounted(true);
+    }
+  }, [_hasHydrated]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,24 +51,38 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center">
             <AppLink asLink href="/" noUnderline className="flex items-center gap-2 group">
-              <div className="p-2 rounded-lg bg-[var(--gp-green)] text-white">
-                <Leaf className="h-5 w-5" />
-              </div>
-              <span className="text-xl font-bold tracking-tight">GreenPeddle</span>
+              <Image src="/gplogo-nobg.png" alt="green-peddle-logo" width={150} height={150} />
             </AppLink>
 
             <div className="hidden md:flex items-center gap-8">
-              <AppLink asLink href="#features" noUnderline className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors">Features</AppLink>
-              <AppLink asLink href="#about" noUnderline className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors">About</AppLink>
-              <AppLink asLink href="/login" noUnderline className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors">Sign In</AppLink>
-              <AppLink 
-                asLink 
-                href="/register" 
-                noUnderline 
-                className="inline-flex items-center justify-center rounded-full px-6 py-2 bg-[var(--gp-green)] text-white font-medium hover:bg-[var(--gp-green)]/90 transition-colors"
-              >
-                Get Started
-              </AppLink>
+              <AppLink asLink href="#features" prefetch={false} noUnderline className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors">Features</AppLink>
+              <AppLink asLink href="#about" prefetch={false} noUnderline className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors">About</AppLink>
+
+              {isMounted && isAuthenticated ? (
+                <>
+                  <AppLink asLink href="/dashboard" noUnderline className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors">Dashboard</AppLink>
+                  <button
+                    onClick={() => logout.mutate()}
+                    className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors"
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : isMounted ? (
+                <>
+                  <AppLink asLink href="/login" noUnderline className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors">Sign In</AppLink>
+                  <AppLink
+                    asLink
+                    href="/register"
+                    noUnderline
+                    className="inline-flex items-center justify-center rounded-full px-6 py-2 bg-[var(--gp-green)] text-white font-medium hover:bg-[var(--gp-green)]/90 transition-colors"
+                  >
+                    Get Started
+                  </AppLink>
+                </>
+              ) : (
+                <div className="w-32 h-8 bg-zinc-100/50 rounded-full animate-pulse" />
+              )}
             </div>
 
             <div className="md:hidden">
@@ -69,10 +102,21 @@ export default function Home() {
           >
             <AppLink asLink href="#features" noUnderline className="block text-sm font-medium">Features</AppLink>
             <AppLink asLink href="#about" noUnderline className="block text-sm font-medium">About</AppLink>
-            <AppLink asLink href="/login" noUnderline className="block text-sm font-medium">Sign In</AppLink>
-            <AppButton fullWidth className="rounded-md">
-              <AppLink asLink href="/register" noUnderline className="text-white hover:text-white">Get Started</AppLink>
-            </AppButton>
+            {isMounted && isAuthenticated ? (
+              <>
+                <AppLink asLink href="/dashboard" noUnderline className="block text-sm font-medium">Dashboard</AppLink>
+                <AppButton fullWidth variant="outline" className="rounded-md" onClick={() => logout.mutate()}>
+                  Logout
+                </AppButton>
+              </>
+            ) : (
+              <>
+                <AppLink asLink href="/login" noUnderline className="block text-sm font-medium">Sign In</AppLink>
+                <AppButton fullWidth className="rounded-md">
+                  <AppLink asLink href="/register" noUnderline className="text-white hover:text-white">Get Started</AppLink>
+                </AppButton>
+              </>
+            )}
           </motion.div>
         )}
       </nav>
@@ -120,8 +164,8 @@ export default function Home() {
                 width={800}
                 height={600}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-                style={{ width: "100%", height: "auto" }}
-                className="object-cover"
+                className="w-full object-cover"
+                style={{ height: 'auto' }}
                 priority
               />
             </div>
@@ -227,9 +271,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 border-t border-foreground/5">
         <div className="max-w-7xl mx-auto px-4 text-center space-y-6">
-          <div className="flex justify-center items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-pointer">
-            <Leaf className="h-6 w-6 text-[var(--gp-green)]" />
-            <span className="text-xl font-bold tracking-tight">GreenPeddle</span>
+          <div className="flex justify-center items-center gap-2  cursor-pointer">
+            <Image src="/gplogo-nobg.png" alt="green-peddle-logo" width={150} height={150} />
           </div>
           <p className="text-zinc-500 text-sm">© {new Date().getFullYear()} GreenPeddle. All rights reserved.</p>
         </div>

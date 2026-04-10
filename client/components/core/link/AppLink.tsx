@@ -11,6 +11,7 @@ type Props = {
   title?: string;
   noUnderline?: boolean;
   showLinkColor?: boolean; // applies GP green
+  prefetch?: boolean;
 };
 
 const AppLink = ({
@@ -22,6 +23,7 @@ const AppLink = ({
   title,
   noUnderline = false,
   showLinkColor = false,
+  prefetch,
 }: Props) => {
   const baseStyles = `
     cursor-pointer transition-colors duration-150
@@ -36,6 +38,7 @@ const AppLink = ({
         className={`${baseStyles} ${className}`}
         onClick={onClick}
         title={title}
+        prefetch={prefetch}
       >
         {children}
       </Link>

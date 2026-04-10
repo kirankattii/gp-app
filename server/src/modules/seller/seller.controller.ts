@@ -83,8 +83,18 @@ export const completeOnboarding = async (req: AuthRequest, res: Response, next: 
     logger.info(`Completing onboarding for user: ${req.user!.id}`);
     const result = await SellerService.completeOnboarding(req.user!.id, parsed.data);
     return res.status(result.status).json(result.data);
-  } catch (error) {
+  } catch (error: any) {
     logger.error(`Error completing onboarding for user ${req.user!.id}:`, error);
+
+    // Handle Prisma Unique Constraint error specifically
+    if (error.code === "P2002") {
+      const target = error.meta?.target || [];
+      const field = target[0] || "field";
+      return res.status(400).json({
+        message: `A seller with this ${field} already exists.`,
+      });
+    }
+
     return next(error);
   }
 };
@@ -99,6 +109,15 @@ export const uploadDocument = async (req: AuthRequest, res: Response, next: Next
     return res.status(result.status).json(result.data);
   } catch (error) {
     logger.error(`Error uploading document for user ${req.user!.id}:`, error);
+    return next(error);
+  }
+};
+
+export const reapply = async (req: AuthRequest, res: Response, next: NextFunction) => {
+  try {
+    const result = await SellerService.reapplyOnboarding(req.user!.id);
+    return res.status(result.status).json(result.data);
+  } catch (error) {
     return next(error);
   }
 };

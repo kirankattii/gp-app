@@ -11,5 +11,9 @@ router.use(requireRole("ADMIN", "SUPERADMIN"));
 router.get("/sellers/pending", AdminController.getPendingSellers);
 router.post("/sellers/:sellerId/approve", AdminController.approveSeller);
 router.post("/sellers/:sellerId/reject", AdminController.rejectSeller);
+router.get("/sellers", AdminController.getAllSellers);
+
+router.get("/users", AdminController.getAllUsers);
+router.get("/users/:id", AdminController.getUserById);
 
 export default router;

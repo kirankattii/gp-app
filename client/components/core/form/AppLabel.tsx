@@ -33,7 +33,7 @@ const InpLabel = ({
       {note ? (
         <AppPopover
           triggerContent={
-            <button className="cursor-pointer text-gray-500 w-auto">
+            <button type="button" className="cursor-pointer text-gray-500 w-auto">
               <Info size={12} />
             </button>
           }

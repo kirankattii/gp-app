@@ -7,6 +7,9 @@ export const authService = {
   register: (data: { name: string; email: string; password: string }) =>
     api.post("/auth/register", data),
 
+  registerSeller: (data: { name: string; email: string; password: string }) =>
+    api.post("/auth/register-seller", data),
+
   logout: () => api.post("/auth/logout"),
 
   refresh: () => api.post("/auth/refresh"),

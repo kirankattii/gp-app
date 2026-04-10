@@ -88,31 +88,38 @@ export const updateBankDetails = async (userId: string, data: any) => {
 };
 
 export const completeOnboarding = async (userId: string, data: any) => {
-  const updated = await prisma.sellerProfile.update({
+  const onboardingData = {
+    // Step 1
+    storeName: data.storeName,
+    mobileNumber: data.mobileNumber,
+    businessType: data.businessType,
+    gstin: data.gstin || null,
+    pan: data.pan,
+    // Step 2
+    pincode: data.pincode,
+    state: data.state,
+    district: data.district,
+    town: data.town,
+    fullAddress: data.fullAddress,
+    latitude: data.latitude ?? null,
+    longitude: data.longitude ?? null,
+    // Step 3
+    bankAccountNumber: data.bankAccountNumber,
+    ifscCode: data.ifscCode,
+    // Finalise
+    profileCompletion: 100,
+    approvalStatus: "PENDING" as const,
+  };
+
+  const updated = await prisma.sellerProfile.upsert({
     where: { userId },
-    data: {
-      // Step 1
-      storeName: data.storeName,
-      mobileNumber: data.mobileNumber,
-      businessType: data.businessType,
-      gstin: data.gstin || null,
-      pan: data.pan,
-      // Step 2
-      pincode: data.pincode,
-      state: data.state,
-      district: data.district,
-      town: data.town,
-      fullAddress: data.fullAddress,
-      latitude: data.latitude,
-      longitude: data.longitude,
-      // Step 3
-      bankAccountNumber: data.bankAccountNumber,
-      ifscCode: data.ifscCode,
-      // Finalise
-      profileCompletion: 100,
-      approvalStatus: "PENDING",
+    update: onboardingData,
+    create: {
+      userId,
+      ...onboardingData,
     },
   });
+
   return { status: 200, data: { message: "Onboarding completed", profile: updated } };
 };
 
@@ -143,4 +150,24 @@ export const uploadDocument = async (userId: string, file: any) => {
       console.error("Error deleting temp file:", error);
     }
   }
+};
+
+export const reapplyOnboarding = async (userId: string) => {
+  const profile = await prisma.sellerProfile.findUnique({ where: { userId } });
+  if (!profile) return { status: 404, data: { message: "Seller profile not found" } };
+
+  if (profile.approvalStatus !== "REJECTED") {
+    return { status: 400, data: { message: "Only rejected profiles can reapply" } };
+  }
+
+  const updated = await prisma.sellerProfile.update({
+    where: { userId },
+    data: {
+      approvalStatus: "PENDING",
+      profileCompletion: 0,
+      rejectionReason: null,
+    },
+  });
+
+  return { status: 200, data: { message: "Reapplication started. Please complete onboarding.", profile: updated } };
 };

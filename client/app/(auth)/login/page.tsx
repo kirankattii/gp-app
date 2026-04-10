@@ -1,11 +1,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "@/schemas/authSchemas";
 import { z } from "zod";
 import { useAuth } from "@/hooks/useAuth";
+import { useAuthStore } from "@/store/authStore";
 import AppButton from "@/components/core/button/AppButton";
 import { AppInput } from "@/components/core/form/AppInput";
 import { AppPasswordInput } from "@/components/core/form/AppPasswordInput";
@@ -15,6 +17,14 @@ import { toast } from "sonner";
 
 export default function LoginPage() {
   const { login } = useAuth();
+  const router = useRouter();
+  const { isAuthenticated } = useAuthStore();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.replace("/");
+    }
+  }, [isAuthenticated, router]);
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
@@ -23,8 +33,6 @@ export default function LoginPage() {
       password: "",
     },
   });
-
-  const router = useRouter();
 
   const onSubmit = async (data: z.infer<typeof loginSchema>) => {
     try {

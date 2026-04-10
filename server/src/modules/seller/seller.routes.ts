@@ -23,6 +23,7 @@ router.use(requireAuth);
 
 router.get("/profile", SellerController.getProfile);
 router.post("/become-seller", SellerController.becomeSeller);
+router.post("/reapply", SellerController.reapply);
 router.post("/complete-onboarding", SellerController.completeOnboarding);
 
 router.patch("/profile", SellerController.updateProfile);

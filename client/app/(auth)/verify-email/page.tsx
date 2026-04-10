@@ -10,6 +10,7 @@ import { CheckCircle2, XCircle, ArrowLeft, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useAuthStore } from "@/store/authStore";
 import AppLink from "@/components/core/link/AppLink";
+import { setCookie } from "@/lib/cookieUtils";
 
 function VerifyEmailContent() {
   const [status, setStatus] = useState<"loading" | "success" | "error">("loading");
@@ -32,18 +33,28 @@ function VerifyEmailContent() {
       .then((res) => {
         setStatus("success");
         setMessage("Your email has been verified successfully! Redirecting...");
-        
+
         // Update auth state with verified user data only if it exists
         if (res.data && res.data.user) {
           setUser(res.data.user);
+          if (res.data.accessToken) {
+            setCookie("gp_token", res.data.accessToken, 7);
+          }
         }
-        
+
         // Always schedule redirect on success (with or without user data)
+        const redirectTo = searchParams.get("redirectTo");
+        // Validate redirectTo is a safe relative path
+        const isValidRedirect = redirectTo && redirectTo.startsWith('/') && !redirectTo.startsWith('//');
         if (timeoutRef.current) {
           clearTimeout(timeoutRef.current);
         }
         timeoutRef.current = setTimeout(() => {
-          router.push("/");
+          if (isValidRedirect) {
+            router.push(redirectTo);
+          } else {
+            router.push("/");
+          }
         }, 2000);
       })
       .catch(() => {

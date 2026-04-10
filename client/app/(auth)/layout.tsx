@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import AppLink from "@/components/core/link/AppLink";
 import { Leaf } from "lucide-react";
+import Image from "next/image";
 
 export default function AuthLayout({
   children,
@@ -23,13 +24,8 @@ export default function AuthLayout({
         transition={{ duration: 0.5 }}
         className="z-10 w-full max-w-md flex flex-col items-center"
       >
-        <AppLink asLink href="/" className="flex items-center gap-2 mb-8 group no-underline hover:no-underline">
-          <div className="p-2 rounded-xl bg-[var(--gp-green)] text-white transition-transform group-hover:scale-110">
-            <Leaf className="h-6 w-6" />
-          </div>
-          <span className="text-2xl font-bold text-[var(--gp-black)] tracking-tight group-hover:text-[var(--gp-green)] transition-colors">
-            GreenPeddle
-          </span>
+        <AppLink asLink href="/" className="flex items-center gap-2 mb-4 group no-underline hover:no-underline">
+          <Image src="/gplogo-nobg.png" alt="green-peddle-logo" width={150} height={150} />
         </AppLink>
 
         <div className="w-full bg-white/70 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl overflow-hidden ring-1 ring-black/5">

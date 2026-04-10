@@ -63,11 +63,11 @@ export const AppInput = ({
     setValueAs:
       type === "number"
         ? (value: string) => {
-            if (value === "" || value === null || value === undefined)
-              return "";
-            const num = Number(value);
-            return isNaN(num) ? "" : num;
-          }
+          if (value === "" || value === null || value === undefined)
+            return "";
+          const num = Number(value);
+          return isNaN(num) ? "" : num;
+        }
         : undefined,
   });
 
@@ -127,12 +127,11 @@ export const AppInput = ({
           autoFocus={autoFocus}
           {...registerRest}
           className={clsx(
-            size === "sm" && "h-9 text-sm",
             leftIcon && "pl-10",
             rightIcon && "pr-10",
             inputClassName,
-            size === "sm" && "h-8",
-            size === "lg" && "h-10"
+            size === "sm" && "h-8 text-sm",
+            size === "lg" && "h-10 text-base"
           )}
         />
         {rightIcon && (

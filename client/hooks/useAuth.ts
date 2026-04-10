@@ -3,6 +3,7 @@ import { authService } from "@/services/authService";
 import { useAuthStore } from "@/store/authStore";
 import { toast } from "sonner";
 import { getErrorMessage } from "@/lib/axios";
+import { setCookie, removeCookie } from "@/lib/cookieUtils";
 
 export const useAuth = () => {
   const setUser = useAuthStore((s) => s.setUser);
@@ -11,7 +12,10 @@ export const useAuth = () => {
   const login = useMutation({
     mutationFn: authService.login,
     onSuccess: (res) => {
-      setUser(res.data.data);
+      setUser(res.data.user);
+      if (res.data.accessToken) {
+        setCookie("gp_token", res.data.accessToken, 7);
+      }
     },
     onError: (error) => {
       toast.error(getErrorMessage(error, "Login failed. Please check your credentials."));
@@ -20,16 +24,42 @@ export const useAuth = () => {
 
   const register = useMutation({
     mutationFn: authService.register,
+    onSuccess: (res) => {
+      if (res.data.user) setUser(res.data.user);
+      if (res.data.accessToken) {
+        setCookie("gp_token", res.data.accessToken, 7);
+      }
+    },
     onError: (error) => {
       toast.error(getErrorMessage(error, "Registration failed. Please try again."));
     },
   });
 
+  const registerSeller = useMutation({
+    mutationFn: authService.registerSeller,
+    onSuccess: (res) => {
+      if (res.data.user) setUser(res.data.user);
+      if (res.data.accessToken) {
+        setCookie("gp_token", res.data.accessToken, 7);
+      }
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Seller registration failed. Please try again."));
+    },
+  });
+
   const logout = useMutation({
     mutationFn: authService.logout,
-    onSuccess: () => clearUser(),
+    onSuccess: () => {
+      clearUser();
+      removeCookie("gp_token");
+      if (typeof window !== "undefined") window.location.href = "/login";
+    },
     onError: (error) => {
       toast.error(getErrorMessage(error, "Logout failed. Please try again."));
+      clearUser();
+      removeCookie("gp_token");
+      if (typeof window !== "undefined") window.location.href = "/login";
     },
   });
 
@@ -63,5 +93,5 @@ export const useAuth = () => {
     },
   });
 
-  return { login, register, logout, forgotPassword, resetPassword, initializeSession };
+  return { login, register, registerSeller, logout, forgotPassword, resetPassword, initializeSession };
 };
