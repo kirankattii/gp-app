@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  AlertOctagon, 
-  Mail, 
+import {
+  AlertOctagon,
+  Mail,
   ArrowLeft,
   FileEdit,
   LifeBuoy
@@ -52,7 +52,7 @@ export default function RejectedPage() {
           <AppCard className="p-8 md:p-12 shadow-2xl shadow-red-900/5 bg-white rounded-[3rem] border-none overflow-hidden relative">
             {/* Background Decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50" />
-            
+
             <div className="relative space-y-10 text-center">
               {/* Error Icon */}
               <div className="flex justify-center">
@@ -76,25 +76,25 @@ export default function RejectedPage() {
 
               {/* Guidance Section */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-                  <div className="p-5 rounded-2xl bg-zinc-50 border border-zinc-100 flex gap-4">
-                      <FileEdit className="w-5 h-5 text-zinc-400 shrink-0" />
-                      <div className="space-y-1">
-                          <h5 className="font-bold text-sm">Next Steps</h5>
-                          <p className="text-xs text-zinc-500">You can update your business details and reapply immediately.</p>
-                      </div>
+                <div className="p-5 rounded-2xl bg-zinc-50 border border-zinc-100 flex gap-4">
+                  <FileEdit className="w-5 h-5 text-zinc-400 shrink-0" />
+                  <div className="space-y-1">
+                    <h5 className="font-bold text-sm">Next Steps</h5>
+                    <p className="text-xs text-zinc-500">You can update your business details and reapply immediately.</p>
                   </div>
-                  <div className="p-5 rounded-2xl bg-zinc-50 border border-zinc-100 flex gap-4">
-                      <LifeBuoy className="w-5 h-5 text-zinc-400 shrink-0" />
-                      <div className="space-y-1">
-                          <h5 className="font-bold text-sm">Need Help?</h5>
-                          <p className="text-xs text-zinc-500">Our team can clarify which documents were missing or invalid.</p>
-                      </div>
+                </div>
+                <div className="p-5 rounded-2xl bg-zinc-50 border border-zinc-100 flex gap-4">
+                  <LifeBuoy className="w-5 h-5 text-zinc-400 shrink-0" />
+                  <div className="space-y-1">
+                    <h5 className="font-bold text-sm">Need Help?</h5>
+                    <p className="text-xs text-zinc-500">Our team can clarify which documents were missing or invalid.</p>
                   </div>
+                </div>
               </div>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-                <AppButton 
+                <AppButton
                   onClick={() => reapplyMutation.mutate()}
                   loading={reapplyMutation.isPending}
                   className="rounded-full px-8 bg-zinc-900 hover:bg-zinc-800 text-white shadow-xl shadow-black/10"
@@ -102,7 +102,7 @@ export default function RejectedPage() {
                   <FileEdit className="w-4 h-4 mr-2" />
                   Update & Reapply
                 </AppButton>
-                <AppButton 
+                <AppButton
                   variant="outline"
                   onClick={() => logout.mutate()}
                   className="rounded-full px-8 bg-transparent border-zinc-200 text-zinc-600"
