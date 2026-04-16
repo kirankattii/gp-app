@@ -8,7 +8,7 @@ export const getProfile = async (userId: string) => {
     where: { userId },
     include: { legalDocuments: true },
   });
-  return { status: 200, data: profile };
+  return { status: 200, data: { success: true, data: profile } };
 };
 
 export const becomeSeller = async (userId: string) => {
@@ -55,7 +55,7 @@ export const updateProfile = async (userId: string, data: any) => {
       profileCompletion: shouldIncrement ? { increment: 10 } : undefined,
     },
   });
-  return { status: 200, data: updated };
+  return { status: 200, data: { success: true, data: updated } };
 };
 
 export const updateAddress = async (userId: string, data: any) => {
@@ -72,7 +72,7 @@ export const updateAddress = async (userId: string, data: any) => {
       profileCompletion: { increment: 10 },
     },
   });
-  return { status: 200, data: updated };
+  return { status: 200, data: { success: true, data: updated } };
 };
 
 export const updateBankDetails = async (userId: string, data: any) => {
@@ -84,7 +84,7 @@ export const updateBankDetails = async (userId: string, data: any) => {
       profileCompletion: { increment: 10 },
     },
   });
-  return { status: 200, data: updated };
+  return { status: 200, data: { success: true, data: updated } };
 };
 
 export const completeOnboarding = async (userId: string, data: any) => {
@@ -120,7 +120,7 @@ export const completeOnboarding = async (userId: string, data: any) => {
     },
   });
 
-  return { status: 200, data: { message: "Onboarding completed", profile: updated } };
+  return { status: 200, data: { success: true, message: "Onboarding completed", data: updated } };
 };
 
 export const uploadDocument = async (userId: string, file: any) => {
@@ -142,7 +142,7 @@ export const uploadDocument = async (userId: string, file: any) => {
       },
     });
 
-    return { status: 201, data: { message: "Document uploaded", doc } };
+    return { status: 201, data: { success: true, message: "Document uploaded", data: doc } };
   } finally {
     try {
       await fs.unlink(file.path);
@@ -169,5 +169,5 @@ export const reapplyOnboarding = async (userId: string) => {
     },
   });
 
-  return { status: 200, data: { message: "Reapplication started. Please complete onboarding.", profile: updated } };
+  return { status: 200, data: { success: true, message: "Reapplication started. Please complete onboarding.", data: updated } };
 };

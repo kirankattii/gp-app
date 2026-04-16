@@ -1,8 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
@@ -12,79 +7,238 @@ datasource db {
   provider = "postgresql"
 }
 
-
-
-
-
+//////////////////////
+// USER
+//////////////////////
 model User {
-  id                  String        @id @default(uuid())
-  name                String?
-  email               String        @unique
-  passwordHash        String?
-  role                Role          @default(BUYER)
-  googleId            String?       @unique
-  isEmailVerified     Boolean       @default(false)
+  id              String  @id @default(uuid())
+  name            String?
+  email           String  @unique
+  passwordHash    String?
+  role            Role    @default(BUYER)
+  googleId        String? @unique
+  isEmailVerified Boolean @default(false)
 
-  tokenVersion        Int           @default(0)
+  tokenVersion Int @default(0)
 
-  twoFactorEnabled    Boolean       @default(false)
-  twoFactorSecret     String?
+  twoFactorEnabled Boolean @default(false)
+  twoFactorSecret  String?
 
   resetPasswordToken   String?
   resetPasswordExpires DateTime?
 
-  verificationToken     String?
-  verificationExpires   DateTime?
+  verificationToken   String?
+  verificationExpires DateTime?
 
-  sellerProfile        SellerProfile?
+  sellerProfile SellerProfile?
 
-  createdAt           DateTime      @default(now())
-  updatedAt           DateTime      @updatedAt
+  productReviews ProductReview[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
+//////////////////////
+// SELLER
+//////////////////////
 model SellerProfile {
-  id                 String           @id @default(uuid())
-  userId             String           @unique
-  user               User             @relation(fields: [userId], references: [id])
+  id     String @id @default(uuid())
+  userId String @unique
 
-  legalDocuments     LegalDocument[]
+  user User @relation(fields: [userId], references: [id])
 
-  storeName          String?
-  businessType       String?
-  mobileNumber       String?
-  fullAddress        String?
-  pincode            Int?
-  town               String?
-  district           String?
-  state              String?
-  country            String?    @default("India")
-  
-  latitude           Float?
-  longitude          Float?
+  legalDocuments LegalDocument[]
+  products       Product[]
 
-  gstin              String?    @unique
-  pan                String?    @unique // Optional in DB to allow initial creation, but mandatory in Zod validation
+  storeName    String?
+  businessType String?
+  mobileNumber String?
+  fullAddress  String?
+  pincode      Int?
+  town         String?
+  district     String?
+  state        String?
+  country      String? @default("India")
 
-  bankAccountNumber  String?
-  ifscCode           String?
+  latitude  Float?
+  longitude Float?
 
-  approvalStatus      SellerStatus @default(PENDING)
-  rejectionReason     String?
-  profileCompletion   Int          @default(0)
+  gstin String? @unique
+  pan   String? @unique
 
-  createdAt          DateTime      @default(now())
-  updatedAt          DateTime      @updatedAt
+  bankAccountNumber String?
+  ifscCode          String?
+
+  approvalStatus    SellerStatus @default(PENDING)
+  rejectionReason   String?
+  profileCompletion Int          @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
+//////////////////////
+// LEGAL DOCS
+//////////////////////
 model LegalDocument {
-  id             String         @id @default(uuid())
+  id              String @id @default(uuid())
   sellerProfileId String
-  sellerProfile   SellerProfile @relation(fields: [sellerProfileId], references: [id], onDelete: Cascade)
 
-  fileUrl        String
-  fileType       String
-  uploadedAt     DateTime       @default(now())
+  sellerProfile SellerProfile @relation(fields: [sellerProfileId], references: [id], onDelete: Cascade)
+
+  fileUrl    String
+  fileType   String
+  uploadedAt DateTime @default(now())
 }
+
+//////////////////////
+// PRODUCT
+//////////////////////
+model Product {
+  id String @id @default(cuid())
+
+  productCode String @unique
+  sellerId    String
+
+  seller SellerProfile @relation(fields: [sellerId], references: [id])
+
+  title       String
+  slug        String @unique
+  description String
+
+  category CategoryType
+  features Json
+
+  hsn                 String?
+  country             String?
+  manufacturer        String?
+  manufacturerContact String?
+  packerContact       String?
+
+  netQuantity String?
+
+  attributes Json? // renamed from categoryAttributes (cleaner)
+
+  status ProductStatus @default(PENDING)
+
+  rejectionReason String?
+  isDeleted       Boolean @default(false)
+
+  approvedAt  DateTime?
+  publishedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  images    ProductImage[]
+  variants  ProductVariant[]
+  documents ProductDocument[]
+  packaging PackagingDeclaration?
+  reviews   ProductReview[]
+
+  @@index([sellerId])
+  @@index([category])
+  @@index([status])
+  @@index([slug])
+  @@index([productCode])
+}
+
+//////////////////////
+// VARIANT
+//////////////////////
+model ProductVariant {
+  id String @id @default(cuid())
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  skuCode String @unique
+
+  size   String?
+  color  String?
+  weight String?
+
+  price Float
+  stock Int   @default(0)
+
+  reservedStock Int @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+//////////////////////
+// IMAGES
+//////////////////////
+model ProductImage {
+  id String @id @default(cuid())
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  url    String
+  isMain Boolean @default(false)
+
+  createdAt DateTime @default(now())
+}
+
+//////////////////////
+// DOCUMENTS
+//////////////////////
+model ProductDocument {
+  id String @id @default(cuid())
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  type DocumentType
+  url  String
+
+  createdAt DateTime @default(now())
+}
+
+//////////////////////
+// PACKAGING
+//////////////////////
+model PackagingDeclaration {
+  id String @id @default(cuid())
+
+  productId String @unique
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  primaryMaterial   String?
+  secondaryMaterial String?
+
+  refillable  Boolean @default(false)
+  reusable    Boolean @default(false)
+  plasticFree Boolean @default(false)
+}
+
+//////////////////////
+// REVIEWS
+//////////////////////
+model ProductReview {
+  id String @id @default(cuid())
+
+  productId String
+  userId    String
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id])
+
+  rating Int
+  review String?
+
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+  @@index([userId])
+}
+
+//////////////////////
+// ENUMS
+//////////////////////
 enum SellerStatus {
   PENDING
   APPROVED
@@ -98,4 +252,26 @@ enum Role {
   SUPERADMIN
 }
 
+enum ProductStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  ACTIVE
+  INACTIVE
+}
 
+enum CategoryType {
+  PERSONAL_CARE
+  BEAUTY
+  HOME_KITCHEN
+  FASHION
+  SPORTS_FITNESS
+}
+
+enum DocumentType {
+  INGREDIENT_LIST
+  MATERIAL_LIST
+  FRONT_LABEL
+  BACK_LABEL
+  CERTIFICATE
+}

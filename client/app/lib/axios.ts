@@ -1,4 +1,5 @@
 import axios, { AxiosError } from "axios";
+import { getCookie, setCookie, removeCookie } from "@/lib/cookieUtils";
 
 const getBaseURL = () => {
   const url = (
@@ -9,12 +10,10 @@ const getBaseURL = () => {
 
 export const api = axios.create({
   baseURL: getBaseURL(),
-  withCredentials: true, // Required for cookies
+  withCredentials: true,
 });
-// Optional: auto-attach JSON headers
-api.defaults.headers.common["Content-Type"] = "application/json";
 
-import { getCookie, setCookie, removeCookie } from "./cookieUtils";
+api.defaults.headers.common["Content-Type"] = "application/json";
 
 let isRefreshing = false;
 let failedQueue: any[] = [];
@@ -32,17 +31,17 @@ const processQueue = (error: any, token: string | null = null) => {
 
 api.interceptors.request.use((config) => {
   const token = getCookie("gp_token");
-  
+
   if (token && config.headers) {
     const bearerToken = `Bearer ${token}`;
-    
-    // Attach header if not already present
-    if (typeof config.headers.set === 'function') {
+
+    if (typeof config.headers.set === "function") {
       if (!config.headers.get("Authorization")) {
         config.headers.set("Authorization", bearerToken);
       }
     } else {
-      (config.headers as any).Authorization = (config.headers as any).Authorization || bearerToken;
+      (config.headers as any).Authorization =
+        (config.headers as any).Authorization || bearerToken;
     }
   }
 
@@ -54,8 +53,10 @@ api.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
-    // Reject immediately if 401 occurs on refresh endpoint (prevents infinite loop)
-    if (error.response?.status === 401 && originalRequest.url?.includes("/auth/refresh")) {
+    if (
+      error.response?.status === 401 &&
+      originalRequest.url?.includes("/auth/refresh")
+    ) {
       removeCookie("gp_token");
       return Promise.reject(error);
     }
@@ -78,7 +79,8 @@ api.interceptors.response.use(
       isRefreshing = true;
 
       return new Promise(function (resolve, reject) {
-        api.post("/auth/refresh")
+        api
+          .post("/auth/refresh")
           .then(({ data }) => {
             const token = data.accessToken;
             setCookie("gp_token", token, 7);
@@ -105,7 +107,7 @@ api.interceptors.response.use(
 /** Extracts a human-readable error message from an Axios error response. */
 export function getErrorMessage(
   error: unknown,
-  fallback = "Something went wrong. Please try again.",
+  fallback = "Something went wrong. Please try again."
 ): string {
   if (axios.isAxiosError(error)) {
     const axiosErr = error as AxiosError<{ message?: string }>;

@@ -46,4 +46,5 @@ export interface TableHeaderItem {
   isSticky?: boolean;
   info?: React.ReactNode;
 }
+
 export type SortValue = "asc" | "desc" | undefined;

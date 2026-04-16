@@ -7,4 +7,6 @@ const allowedOrigins = process.env.CORS_ORIGIN
 export default cors({
   origin: allowedOrigins,
   credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
+  exposedHeaders: ["Authorization"],
 });

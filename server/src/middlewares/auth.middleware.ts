@@ -13,16 +13,40 @@ export const requireAuth = (
   res: Response,
   next: NextFunction
 ) => {
-  const authHeader = req.headers.authorization;
+  let token: string | undefined;
+  let source: string = "none";
 
-  if (!authHeader?.startsWith("Bearer ")) {
+  // Diagnostic Logging
+  console.log(`[AuthDebug] ${req.method} ${req.originalUrl}`);
+  console.log(`[AuthDebug] Headers keys: ${Object.keys(req.headers).join(", ")}`);
+  console.log(`[AuthDebug] Cookie keys: ${req.cookies ? Object.keys(req.cookies).join(", ") : "none"}`);
+
+  // 1. Try to get token from Authorization header
+  const authHeader = req.headers.authorization;
+  if (authHeader?.startsWith("Bearer ")) {
+    token = authHeader.split(" ")[1];
+    source = "header";
+  }
+
+  // 2. Fallback to gp_token or accessToken cookie
+  if (!token) {
+    if (req.cookies?.gp_token) {
+      token = req.cookies.gp_token;
+      source = "cookie (gp_token)";
+    } else if (req.cookies?.accessToken) {
+      token = req.cookies.accessToken;
+      source = "cookie (accessToken)";
+    }
+  }
+
+  console.log(`[AuthDebug] Token source: ${source}, Token present: ${!!token}`);
+
+  if (!token) {
     return res.status(401).json({
       success: false,
       message: "No token provided",
     });
   }
-
-  const token = authHeader.split(" ")[1];
 
   try {
     const decoded = jwt.verify(

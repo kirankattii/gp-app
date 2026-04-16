@@ -1237,3 +1237,109 @@ Error: Email configuration missing: EMAIL_FROM
 {"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-09T21:43:06.738Z"}
 {"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-09T21:43:06.804Z"}
 {"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-09T21:43:06.817Z"}
+[2026-04-10 08:16:52] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-10 08:16:52] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-10 08:20:00] [32minfo[39m: 📧 Attempting to send email to king@gmail.com with subject: "Verify Email"
+[2026-04-10 08:20:05] [32minfo[39m: ✅ Email sent successfully: <babdfbc3-a0fd-007c-b282-256f883b8b61@myapp.com>
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T03:02:19.306Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T03:02:19.459Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T03:02:19.712Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T03:02:19.720Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:04:55.669Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:04:55.813Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:04:56.100Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:04:56.185Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:05:54.125Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:05:54.136Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:05:54.336Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:05:54.350Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T03:05:57.432Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T03:05:57.439Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T03:05:57.456Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T03:05:57.515Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T03:14:44.273Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T03:14:44.319Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T03:14:44.491Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T03:14:44.496Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T03:15:02.946Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T03:15:02.954Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T03:15:03.113Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T03:15:03.121Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:15:32.077Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:15:32.085Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:15:32.284Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:15:32.296Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T03:35:07.578Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T03:35:07.595Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T03:35:07.676Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T03:35:07.703Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:35:11.938Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:35:11.945Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:35:11.954Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T03:35:11.964Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","timestamp":"2026-04-10T03:35:14.382Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","timestamp":"2026-04-10T03:35:14.387Z"}
+{"level":"info","limit":"20","listType":"count","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-10T03:35:20.016Z"}
+{"level":"info","limit":"20","listType":"count","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-10T03:35:20.028Z"}
+{"level":"info","limit":"20","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-10T03:35:20.091Z"}
+{"level":"info","limit":"20","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-10T03:35:20.133Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T04:42:25.120Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T04:42:25.133Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-10T04:42:25.261Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-10T04:42:25.286Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T04:42:34.028Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T04:42:34.034Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T04:42:34.046Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-10T04:42:34.063Z"}
+{"level":"info","limit":"20","listType":"count","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-10T04:42:36.531Z"}
+{"level":"info","limit":"20","listType":"count","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-10T04:42:36.541Z"}
+{"level":"info","limit":"20","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-10T04:42:36.645Z"}
+{"level":"info","limit":"20","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-10T04:42:36.657Z"}
+[2026-04-10 10:31:51] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-10 10:31:51] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-10 10:34:39] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-10 10:34:40] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-10 10:34:48] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-10 10:34:48] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-10 10:38:07] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-10 10:38:07] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-10 10:38:14] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-10 10:38:14] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-10 10:40:07] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-10 10:40:08] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+{"level":"info","message":"Fetching profile for user: fde079a5-9355-4043-be58-a03565432042","timestamp":"2026-04-10T05:10:15.768Z"}
+{"level":"info","message":"Fetching profile for user: fde079a5-9355-4043-be58-a03565432042","timestamp":"2026-04-10T05:10:15.806Z"}
+[2026-04-10 10:41:51] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-10 10:41:51] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-10 10:42:08] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-10 10:42:09] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+[2026-04-10 10:42:45] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-10 10:42:45] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+{"level":"info","message":"Fetching profile for user: fde079a5-9355-4043-be58-a03565432042","timestamp":"2026-04-10T05:14:17.138Z"}
+{"level":"info","message":"Fetching profile for user: fde079a5-9355-4043-be58-a03565432042","timestamp":"2026-04-10T05:14:17.566Z"}
+[2026-04-14 13:01:05] [32minfo[39m: 🚀 Server running on port 5000
+[2026-04-14 13:01:05] [32minfo[39m: 📦 Connected to PostgreSQL using Prisma 7 adapter
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-14T07:32:54.043Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-14T07:32:54.094Z"}
+{"level":"info","listType":"count","message":"Admin fetching all users with filters","timestamp":"2026-04-14T07:32:54.209Z"}
+{"level":"info","message":"Admin fetching all sellers with filters","outputType":"count","timestamp":"2026-04-14T07:32:54.217Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-14T07:33:20.800Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-14T07:33:20.816Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","outputType":"count","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-14T07:33:20.928Z"}
+{"level":"info","limit":"20","message":"Admin fetching all sellers with filters","page":"1","sortBy":"createdAt","sortOrder":"desc","status":"PENDING","timestamp":"2026-04-14T07:33:20.952Z"}
+{"level":"info","message":"Admin fetching user: 7b74472e-1de4-4839-b8cc-cfdf1cabd711","timestamp":"2026-04-14T07:33:23.425Z"}
+{"level":"info","message":"Admin fetching user: 7b74472e-1de4-4839-b8cc-cfdf1cabd711","timestamp":"2026-04-14T07:33:23.442Z"}
+{"level":"info","limit":"20","listType":"count","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:33:26.267Z"}
+{"level":"info","limit":"20","listType":"count","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:33:26.278Z"}
+{"level":"info","limit":"20","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:33:26.352Z"}
+{"level":"info","limit":"20","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:33:26.371Z"}
+{"level":"info","message":"Admin fetching user: d60f9bf7-2150-4032-bf8a-b859ec9d96f2","timestamp":"2026-04-14T07:33:28.097Z"}
+{"level":"info","message":"Admin fetching user: d60f9bf7-2150-4032-bf8a-b859ec9d96f2","timestamp":"2026-04-14T07:33:28.110Z"}
+{"level":"info","limit":"20","listType":"count","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:33:30.873Z"}
+{"level":"info","limit":"20","listType":"count","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:33:30.881Z"}
+{"level":"info","limit":"20","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:33:30.955Z"}
+{"level":"info","limit":"20","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:33:30.966Z"}
+{"level":"info","limit":"20","listType":"count","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:54:12.633Z"}
+{"level":"info","limit":"20","listType":"count","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:54:12.798Z"}
+{"level":"info","limit":"20","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:54:12.821Z"}
+{"level":"info","limit":"20","message":"Admin fetching all users with filters","page":"1","timestamp":"2026-04-14T07:54:12.833Z"}

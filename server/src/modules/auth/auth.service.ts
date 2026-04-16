@@ -153,6 +153,13 @@ export const verifyEmail = async (token: string, res: Response): Promise<AuthRes
       secure: process.env.NODE_ENV === "production",
     });
 
+    res.cookie("gp_token", accessToken, {
+      httpOnly: false, // Allow client to read for header fallback if needed
+      sameSite: REFRESH_COOKIE_SAME_SITE,
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 15 * 60 * 1000, // 15 mins (match access token expiry)
+    });
+
     return {
       status: 200,
       data: {
@@ -239,6 +246,13 @@ export const login = async (data: any, res: Response): Promise<AuthResponse> => 
     sameSite: REFRESH_COOKIE_SAME_SITE,
     secure: process.env.NODE_ENV === "production",
   });
+
+  res.cookie("gp_token", accessToken, {
+    httpOnly: false,
+    sameSite: REFRESH_COOKIE_SAME_SITE,
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 15 * 60 * 1000,
+  });
   return {
     status: 200,
     data: {
@@ -288,6 +302,13 @@ export const refresh = async (req: Request, res: Response): Promise<AuthResponse
     sameSite: REFRESH_COOKIE_SAME_SITE,
     secure: process.env.NODE_ENV === "production",
   });
+
+  res.cookie("gp_token", newAccess, {
+    httpOnly: false,
+    sameSite: REFRESH_COOKIE_SAME_SITE,
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 15 * 60 * 1000,
+  });
   return {
     status: 200,
     data: {
@@ -307,6 +328,7 @@ export const refresh = async (req: Request, res: Response): Promise<AuthResponse
 
 export const logout = async (res: Response): Promise<AuthResponse> => {
   res.clearCookie("refreshToken");
+  res.clearCookie("gp_token");
   return { status: 200, data: { message: "Logged out successfully" } };
 };
 
@@ -430,6 +452,13 @@ export const googleCallback = async (req: Request, res: Response): Promise<AuthR
       sameSite: REFRESH_COOKIE_SAME_SITE,
       secure: process.env.NODE_ENV === "production",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    });
+
+    res.cookie("gp_token", accessToken, {
+      httpOnly: false,
+      sameSite: REFRESH_COOKIE_SAME_SITE,
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 15 * 60 * 1000,
     });
     return {
       status: 302,

@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import { useAuth } from "@/hooks/useAuth";
 import { useAuthStore } from "@/store/authStore";
-
 import { Loader2 } from "lucide-react";
 
 export default function SellerLayout({
@@ -12,12 +12,34 @@ export default function SellerLayout({
   children: React.ReactNode;
 }) {
   const { user, isAuthenticated, _hasHydrated } = useAuthStore();
+  const { initializeSession } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
   const [isAuthorized, setIsAuthorized] = useState(false);
+  const [isInitializing, setIsInitializing] = useState(true);
+  const syncAttempted = useRef(false);
 
   useEffect(() => {
-    if (!_hasHydrated) return;
+    const syncSession = async () => {
+      if (!_hasHydrated || syncAttempted.current) return;
+      syncAttempted.current = true;
+      
+      try {
+        if (isAuthenticated) {
+          await initializeSession.mutateAsync();
+        }
+      } catch (err) {
+        console.error("Session sync failed:", err);
+      } finally {
+        setIsInitializing(false);
+      }
+    };
+
+    syncSession();
+  }, [_hasHydrated, isAuthenticated, initializeSession]);
+
+  useEffect(() => {
+    if (!_hasHydrated || isInitializing) return;
 
     if (!isAuthenticated) {
       router.push("/login?redirect=" + pathname);
@@ -32,37 +54,61 @@ export default function SellerLayout({
     // Protection logic for specific status-based pages
     const status = user.sellerProfile?.approvalStatus;
     const completion = user.sellerProfile?.profileCompletion || 0;
+    
     const isApproved = status === "APPROVED";
     const isPending = status === "PENDING";
     const isRejected = status === "REJECTED";
-    const hasStartedOnboarding = completion > 10;
+    const isFullyOnboarded = completion === 100;
 
-    // If approved, they should always be on the dashboard
-    if (isApproved && (pathname.includes("/onboarding") || pathname.includes("/pending-approval") || pathname.includes("/rejected"))) {
-      router.push("/seller/dashboard");
-      return;
+    const isOnboardingPage = pathname.includes("/onboarding");
+    const isPendingPage = pathname.includes("/pending-approval");
+    const isRejectedPage = pathname.includes("/rejected");
+    const isDashboardPath = pathname.includes("/dashboard") || 
+                           pathname.includes("/products") || 
+                           pathname.includes("/orders") || 
+                           pathname.includes("/settings");
+
+    // 1. APPROVED: Restricted to dashboard paths only
+    if (isApproved) {
+      if (isOnboardingPage || isPendingPage || isRejectedPage) {
+        router.push("/seller/dashboard");
+        return;
+      }
     }
 
-    // If pending and finished/started onboarding (threshold > 10), they should be on the pending page
-    if (isPending && hasStartedOnboarding && (pathname.includes("/dashboard") || pathname.includes("/onboarding"))) {
-      router.push("/seller/pending-approval");
-      return;
+    // 2. REJECTED: Restricted to rejection page only
+    if (isRejected) {
+      if (!isRejectedPage) {
+        router.push("/seller/rejected");
+        return;
+      }
     }
 
-    // If pending but NOT finished onboarding, they should be allowed on the onboarding page
-    if (isPending && !hasStartedOnboarding && (pathname.includes("/dashboard") || pathname.includes("/pending-approval"))) {
-      router.push("/seller/onboarding");
-      return;
-    }
-
-    // If rejected, redirect to rejection page
-    if (isRejected && !pathname.includes("/rejected")) {
-      router.push("/seller/rejected");
-      return;
+    // 3. PENDING:
+    if (isPending) {
+      if (isFullyOnboarded) {
+        // If fully onboarded but still pending, force to pending page
+        if (!isPendingPage) {
+          router.push("/seller/pending-approval");
+          return;
+        }
+      } else {
+        // If not fully onboarded, force to onboarding
+        if (!isOnboardingPage) {
+          router.push("/seller/onboarding");
+          return;
+        }
+      }
+      
+      // Prevent pending sellers (regardless of completion) from seeing the dashboard
+      if (isDashboardPath) {
+        router.push(isFullyOnboarded ? "/seller/pending-approval" : "/seller/onboarding");
+        return;
+      }
     }
 
     setIsAuthorized(true);
-  }, [isAuthenticated, user, _hasHydrated, pathname, router]);
+  }, [isAuthenticated, user, _hasHydrated, isInitializing, pathname, router]);
 
   if (!_hasHydrated || !isAuthorized) {
     return (

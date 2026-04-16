@@ -20,7 +20,7 @@ import { useAuth } from "@/hooks/useAuth";
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const { isAuthenticated, _hasHydrated } = useAuthStore();
+  const { user, isAuthenticated, _hasHydrated } = useAuthStore();
   const { logout } = useAuth();
 
   useEffect(() => {
@@ -60,6 +60,11 @@ export default function Home() {
 
               {isMounted && isAuthenticated ? (
                 <>
+                  {user?.role === "SELLER" && (
+                    <AppLink asLink href="/seller/dashboard" noUnderline className="text-sm font-bold text-[var(--gp-green)] hover:opacity-80 transition-opacity">
+                      Seller Dashboard
+                    </AppLink>
+                  )}
                   <AppLink asLink href="/dashboard" noUnderline className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors">Dashboard</AppLink>
                   <button
                     onClick={() => logout.mutate()}
@@ -70,6 +75,7 @@ export default function Home() {
                 </>
               ) : isMounted ? (
                 <>
+                  <AppLink asLink href="/seller/onboarding" noUnderline className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors">Become a Seller</AppLink>
                   <AppLink asLink href="/login" noUnderline className="text-sm font-medium hover:text-[var(--gp-green)] transition-colors">Sign In</AppLink>
                   <AppLink
                     asLink
@@ -98,21 +104,27 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden bg-white border-b border-zinc-100 p-4 space-y-4"
+            className="md:hidden bg-white border-b border-zinc-100 p-4 space-y-4 shadow-xl"
           >
             <AppLink asLink href="#features" noUnderline className="block text-sm font-medium">Features</AppLink>
             <AppLink asLink href="#about" noUnderline className="block text-sm font-medium">About</AppLink>
             {isMounted && isAuthenticated ? (
               <>
+                {user?.role === "SELLER" && (
+                  <AppLink asLink href="/seller/dashboard" noUnderline className="block text-sm font-bold text-[var(--gp-green)]">
+                    Seller Dashboard
+                  </AppLink>
+                )}
                 <AppLink asLink href="/dashboard" noUnderline className="block text-sm font-medium">Dashboard</AppLink>
-                <AppButton fullWidth variant="outline" className="rounded-md" onClick={() => logout.mutate()}>
+                <AppButton fullWidth variant="outline" className="rounded-xl border-zinc-200" onClick={() => logout.mutate()}>
                   Logout
                 </AppButton>
               </>
             ) : (
               <>
+                <AppLink asLink href="/seller/onboarding" noUnderline className="block text-sm font-medium">Become a Seller</AppLink>
                 <AppLink asLink href="/login" noUnderline className="block text-sm font-medium">Sign In</AppLink>
-                <AppButton fullWidth className="rounded-md">
+                <AppButton fullWidth className="rounded-xl bg-[var(--gp-green)] text-white">
                   <AppLink asLink href="/register" noUnderline className="text-white hover:text-white">Get Started</AppLink>
                 </AppButton>
               </>
