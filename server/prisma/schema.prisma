@@ -157,6 +157,7 @@ model ProductVariant {
   size   String?
   color  String?
   weight String?
+  ml     String?
 
   price Float
   stock Int   @default(0)

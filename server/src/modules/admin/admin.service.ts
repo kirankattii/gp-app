@@ -241,3 +241,97 @@ export const getAllSellers = async (params: any = {}) => {
     return { status: 500, data: { message: "Internal server error", error: error.message } };
   }
 };
+
+export const getPendingProducts = async () => {
+  const products = await prisma.product.findMany({
+    where: { status: "PENDING" },
+    include: {
+      seller: {
+        select: {
+          storeName: true,
+          user: { select: { email: true, name: true } }
+        }
+      },
+      variants: true,
+      images: true,
+    },
+  });
+  return { status: 200, data: { success: true, products } };
+};
+
+export const approveProduct = async (productId: string) => {
+  const product = await prisma.product.findUnique({ where: { id: productId } });
+  if (!product) return { status: 404, data: { success: false, message: "Product not found" } };
+
+  const updated = await prisma.product.update({
+    where: { id: productId },
+    data: {
+      status: "APPROVED",
+      rejectionReason: null,
+      approvedAt: new Date(),
+    },
+  });
+  return { status: 200, data: { success: true, message: "Product approved", product: updated } };
+};
+
+export const rejectProduct = async (productId: string, reason: string) => {
+  const product = await prisma.product.findUnique({ where: { id: productId } });
+  if (!product) return { status: 404, data: { success: false, message: "Product not found" } };
+
+  const updated = await prisma.product.update({
+    where: { id: productId },
+    data: {
+      status: "REJECTED",
+      rejectionReason: reason,
+    },
+  });
+  return { status: 200, data: { success: true, message: "Product rejected", product: updated } };
+};
+
+export const getAllProducts = async (params: any = {}) => {
+  const {
+    status,
+    search,
+    page = 1,
+    limit = 20,
+    sortBy = "createdAt",
+    sortOrder = "desc",
+  } = params;
+
+  const where: any = {};
+
+  if (status && status !== "All") {
+    where.status = status.toUpperCase();
+  }
+
+  if (search) {
+    where.OR = [
+      { title: { contains: search, mode: "insensitive" } },
+      { productCode: { contains: search, mode: "insensitive" } },
+    ];
+  }
+
+  try {
+    const skip = (Number(page) - 1) * Number(limit);
+    const take = Number(limit);
+
+    const [products, totalRecords] = await Promise.all([
+      prisma.product.findMany({
+        where,
+        include: {
+          seller: { select: { storeName: true } },
+          variants: true,
+        },
+        orderBy: { [sortBy]: sortOrder },
+        skip: isNaN(skip) ? 0 : skip,
+        take: isNaN(take) ? 20 : take,
+      }),
+      prisma.product.count({ where }),
+    ]);
+
+    return { status: 200, data: { success: true, products, totalRecords } };
+  } catch (error: any) {
+    console.error("Error in getAllProducts:", error);
+    return { status: 500, data: { success: false, message: "Internal server error", error: error.message } };
+  }
+};

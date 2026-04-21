@@ -16,4 +16,9 @@ router.get("/sellers", AdminController.getAllSellers);
 router.get("/users", AdminController.getAllUsers);
 router.get("/users/:id", AdminController.getUserById);
 
+router.get("/products/pending", AdminController.getPendingProducts);
+router.post("/products/:productId/approve", AdminController.approveProduct);
+router.post("/products/:productId/reject", AdminController.rejectProduct);
+router.get("/products", AdminController.getAllProducts);
+
 export default router;
